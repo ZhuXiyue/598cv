@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name='second_decode_added_atten'
+#SBATCH --output='outfile/decoder_added.%j.%N.out'
+#SBATCH --error='outfile/decoder_added.%j.%N.err'
+#SBATCH --partition=gpux3
+#SBATCH --time=15
+#module load wmlce/1.7.0-py3.7
+#!/bin/bash
+#conda init bash
+#conda activate xy_torch1.3
+python main.py --exp_name=first_re --dataset_path=../../vision3D_data/ 

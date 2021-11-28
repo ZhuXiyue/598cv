@@ -244,6 +244,46 @@ class SA_Layer(nn.Module):
         return x
 
 
+
+class SA_Layer_3d(nn.Module):
+    def __init__(self,channels):
+        super(SA_Layer_3d, self).__init__()
+        self.q_conv = nn.Conv1d(channels, channels // 4, 1, bias=False)
+        self.k_conv = nn.Conv1d(channels, channels // 4, 1, bias=False)
+        self.q_conv.weight = self.k_conv.weight
+        self.q_conv.bias = self.k_conv.bias
+        
+        self.v_conv = nn.Conv1d(channels, channels, 1)
+        self.trans_conv = nn.Conv1d(channels, channels, 1)
+        self.after_norm = nn.BatchNorm1d(channels)
+        self.act = nn.ReLU()
+        self.softmax = nn.Softmax(dim=-1)
+
+    def forward(self, x):
+        ## originally, x is of shape : [ b, c, n ]
+        ## now, it should be [B, 3+C, N, S]
+        ## correspodence: B:B,N ; c:3+C,n:S,
+
+        B, C_3, N, S = x.size()
+        x = x.permute(0,2,1,3) #[B, N, 3+C, S]
+        x = x.reshape(B*N,C_3,S) #b, c, n 
+        x_q = self.q_conv(x).permute(0, 2, 1) # B, N, S, 3+C # b, n, c 
+        x_k = self.k_conv(x) #B, N, 3+C, S # b, c, n        
+        x_v = self.v_conv(x)
+        energy = torch.bmm(x_q, x_k) # b, n, n 
+        attention = self.softmax(energy)
+        attention = attention / (1e-9 + attention.sum(dim=1, keepdims=True))
+        x_r = torch.bmm(x_v, attention) # b, c, n 
+        x_r = self.act(self.after_norm(self.trans_conv(x - x_r)))
+        x = x.reshape(B,N,C_3,S)
+        x_r = x_r.reshape(B,N,C_3,S)
+        x = x + x_r
+        x=x.permute(0,2,1,3) #[B, N, 3+C, S]
+        return x
+
+
+
+
 class PointNetSetAbstraction(nn.Module):
     def __init__(self, npoint, radius, nsample, in_channel, mlp, mlp2 = None, group_all = False):
         super(PointNetSetAbstraction, self).__init__()
@@ -257,6 +297,7 @@ class PointNetSetAbstraction(nn.Module):
         ## attention added here!
         self.sa = SA_Layer(in_channel+3)
         last_channel = in_channel+3
+        
         for out_channel in mlp:
             self.mlp_convs.append(nn.Conv2d(last_channel, out_channel, 1, bias = False))
             self.mlp_bns.append(nn.BatchNorm2d(out_channel))
@@ -264,10 +305,10 @@ class PointNetSetAbstraction(nn.Module):
         if not mlp2 is None:
             self.sa2 = SA_Layer(in_channel+3)
 
-            for out_channel in mlp2:
-                self.mlp2_convs.append(nn.Sequential(nn.Conv1d(last_channel, out_channel, 1, bias=False),
-                                                    nn.BatchNorm1d(out_channel)))
-                last_channel = out_channel
+            #for out_channel in mlp2:
+                #self.mlp2_convs.append(nn.Sequential(nn.Conv1d(last_channel, out_channel, 1, bias=False),
+                #                                    nn.BatchNorm1d(out_channel)))
+                #last_channel = out_channel
         if group_all:
             self.queryandgroup = pointutils.GroupAll()
         else:
@@ -305,8 +346,8 @@ class PointNetSetAbstraction(nn.Module):
         #     new_points =  F.relu(bn(conv(new_points)))
 
         new_points = torch.max(new_points, -1)[0]
-        
-        new_points = self.sa2(new_points)
+        #if 
+        #    new_points = self.sa2(new_points)
 
         # for i, conv in enumerate(self.mlp2_convs):
         #     new_points = F.relu(conv(new_points))
@@ -314,8 +355,8 @@ class PointNetSetAbstraction(nn.Module):
         return new_xyz, new_points
 
 class PointNetSetAbstractionOrg(nn.Module):
-    def __init__(self, npoint, radius, nsample, in_channel, mlp, mlp2 = None, group_all = False):
-        super(PointNetSetAbstraction, self).__init__()
+    def __init__(self, npoint, radius, nsample, in_channel, mlp, mlp2 = [], group_all = False):
+        super(PointNetSetAbstractionOrg, self).__init__()
         self.npoint = npoint
         self.radius = radius
         self.nsample = nsample
@@ -435,14 +476,22 @@ class PointNetSetUpConv(nn.Module):
         self.nsample = nsample
         self.radius = radius
         self.knn = knn
-        self.mlp1_convs = nn.ModuleList()
+        # self.mlp1_convs = nn.ModuleList()
         self.mlp2_convs = nn.ModuleList()
         last_channel = f2_channel+3
-        for out_channel in mlp:
-            self.mlp1_convs.append(nn.Sequential(nn.Conv2d(last_channel, out_channel, 1, bias=False),
-                                                 nn.BatchNorm2d(out_channel),
-                                                 nn.ReLU(inplace=False)))
-            last_channel = out_channel
+        self.sa = nn.ModuleList()
+        if not len(mlp) == 0:
+            self.sa.append(SA_Layer(last_channel))
+           
+        # for out_channel in mlp:
+        #     self.mlp1_convs.append(nn.Sequential(nn.Conv2d(last_channel, out_channel, 1, bias=False),
+        #                                          nn.BatchNorm2d(out_channel),
+        #                                          nn.ReLU(inplace=False)))
+        #     last_channel = out_channel
+
+        # last_channel = last_channel + f1_channel
+        # self.sa2=SA_Layer(last_channel)
+        
         if len(mlp) is not 0:
             last_channel = mlp[-1] + f1_channel
         else:
@@ -452,7 +501,6 @@ class PointNetSetUpConv(nn.Module):
                                                  nn.BatchNorm1d(out_channel),
                                                  nn.ReLU(inplace=False)))
             last_channel = out_channel
-
     def forward(self, pos1, pos2, feature1, feature2):
         """
             Feature propagation from xyz2 (less points) to xyz1 (more points)
@@ -480,8 +528,11 @@ class PointNetSetUpConv(nn.Module):
 
         feat2_grouped = pointutils.grouping_operation(feature2, idx)
         feat_new = torch.cat([feat2_grouped, pos_diff], dim = 1)   # [B,C1+3,N1,S]
-        for conv in self.mlp1_convs:
-            feat_new = conv(feat_new)
+        for sa_sub in self.sa:
+            feat_new = sa_sub(feat_new)
+
+        # for conv in self.mlp1_convs:
+        #     feat_new = conv(feat_new)
         # max pooling
         feat_new = feat_new.max(-1)[0]   # [B,mlp1[-1],N1]
         # concatenate feature in early layer
@@ -489,8 +540,7 @@ class PointNetSetUpConv(nn.Module):
             feat_new = torch.cat([feat_new, feature1], dim=1)
         # feat_new = feat_new.view(B,-1,N,1)
         for conv in self.mlp2_convs:
-            feat_new = conv(feat_new)
-        
+            feat_new = conv(feat_new)        
         return feat_new
 
 class PointNetFeaturePropogation(nn.Module):

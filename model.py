@@ -18,13 +18,13 @@ class FlowNet3D(nn.Module):
         self.sa1 = PointNetSetAbstractionOrg(npoint=1024, radius=0.5, nsample=16, in_channel=3, mlp=[32, 64, 128], group_all=False)
         self.sa2 = PointNetSetAbstraction(npoint=256, radius=1.0, nsample=16, in_channel=128, mlp=[128, 128, 128], group_all=False)
         self.sa3 = PointNetSetAbstraction(npoint=64, radius=2.0, nsample=8, in_channel=128, mlp=[128, 128, 128], group_all=False)
-        self.sa4 = PointNetSetAbstraction(npoint=16, radius=4.0, nsample=8, in_channel=128, mlp=[128, 128, 128], group_all=False)
+        self.sa4 = PointNetSetAbstraction(npoint=16, radius=4.0, nsample=8, in_channel=128+3, mlp=[128, 128, 128], group_all=False)
         
-        self.fe_layer = FlowEmbedding(radius=10.0, nsample=64, in_channel = 128, mlp=[128, 128, 128], pooling='max', corr_func='concat')
+        self.fe_layer = FlowEmbedding(radius=10.0, nsample=64, in_channel = 128+3, mlp=[128, 128, 128], pooling='max', corr_func='concat')
         
-        self.su1 = PointNetSetUpConv(nsample=8, radius=2.4, f1_channel = 128, f2_channel = 128, mlp=[], mlp2=[256, 256])
-        self.su2 = PointNetSetUpConv(nsample=8, radius=1.2, f1_channel = 128+128, f2_channel = 256, mlp=[128, 128, 256], mlp2=[256])
-        self.su3 = PointNetSetUpConv(nsample=8, radius=0.6, f1_channel = 128, f2_channel = 128, mlp=[128, 128, 256], mlp2=[256])
+        self.su1 = PointNetSetUpConv(nsample=8, radius=2.4, f1_channel = 128+3, f2_channel = 128+6, mlp=[], mlp2=[256, 256])
+        self.su2 = PointNetSetUpConv(nsample=8, radius=1.2, f1_channel = 128+128+3+3, f2_channel = 256, mlp=[128, 128, 256], mlp2=[256])
+        self.su3 = PointNetSetUpConv(nsample=8, radius=0.6, f1_channel = 128+3, f2_channel = 256, mlp=[128, 128, 256], mlp2=[256])
         self.fp = PointNetFeaturePropogation(in_channel = 256+3, mlp = [256, 256])
         
         self.conv1 = nn.Conv1d(256, 128, kernel_size=1, bias=False)
@@ -33,17 +33,17 @@ class FlowNet3D(nn.Module):
         
     def forward(self, pc1, pc2, feature1, feature2):
         l1_pc1, l1_feature1 = self.sa1(pc1, feature1) # l1_pc1 128, l1_f1 128
-        l2_pc1, l2_feature1 = self.sa2(l1_pc1, l1_feature1) # l2_pc1 128, l2_f1 128
+        l2_pc1, l2_feature1 = self.sa2(l1_pc1, l1_feature1) # l2_pc1 128+3, l2_f1 128+3
         
         l1_pc2, l1_feature2 = self.sa1(pc2, feature2) # l2_pc1 128, l1_f2 128
-        l2_pc2, l2_feature2 = self.sa2(l1_pc2, l1_feature2) # l2_pc2 128, l2_f2 128
+        l2_pc2, l2_feature2 = self.sa2(l1_pc2, l1_feature2) # l2_pc2 128+3, l2_f2 128+3
         
         _, l2_feature1_new = self.fe_layer(l2_pc1, l2_pc2, l2_feature1, l2_feature2) # l2_f1n 128
 
-        l3_pc1, l3_feature1 = self.sa3(l2_pc1, l2_feature1_new) # l3_pc1 l3_f1 128
-        l4_pc1, l4_feature1 = self.sa4(l3_pc1, l3_feature1) # l4_pc1 l4_f1 128
+        l3_pc1, l3_feature1 = self.sa3(l2_pc1, l2_feature1_new) # l3_pc1 l3_f1 128+6
+        l4_pc1, l4_feature1 = self.sa4(l3_pc1, l3_feature1) # l4_pc1 l4_f1 128+9
         
-        l3_fnew1 = self.su1(l3_pc1, l4_pc1, l3_feature1, l4_feature1) # l3_fn1 = 128
+        l3_fnew1 = self.su1(l3_pc1, l4_pc1, l3_feature1, l4_feature1) # l3_fn1 = 256
         l2_fnew1 = self.su2(l2_pc1, l3_pc1, torch.cat([l2_feature1, l2_feature1_new], dim=1), l3_fnew1)
         l1_fnew1 = self.su3(l1_pc1, l2_pc1, l1_feature1, l2_fnew1)
         l0_fnew1 = self.fp(pc1, l1_pc1, feature1, l1_fnew1)

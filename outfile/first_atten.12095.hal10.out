@@ -1,0 +1,802 @@
+Namespace(batch_size=64, cycle=False, dataset='SceneflowDataset', dataset_path='../../vision3D_data/', dropout=0.5, emb_dims=512, epochs=250, eval=False, exp_name='first_re', gaussian_noise=False, lr=0.001, model='flownet', model_path='', momentum=0.9, no_cuda=False, num_points=2048, seed=1234, test_batch_size=32, unseen=False, use_sgd=False)
+train :  20006
+test :  2007
+Let's use 2 GPUs!
+Use Adam
+==epoch: 0, learning rate: 0.001000==
+mean train EPE loss: 0.475582
+mean test loss: 0.388749	EPE 3D: 0.759757	ACC 3D: 0.004084	ACC 3D 2: 0.026383
+best test loss till now: 0.388749
+==epoch: 1, learning rate: 0.001000==
+mean train EPE loss: 0.425952
+mean test loss: 0.377350	EPE 3D: 0.759924	ACC 3D: 0.003568	ACC 3D 2: 0.022619
+best test loss till now: 0.377350
+==epoch: 2, learning rate: 0.001000==
+mean train EPE loss: 0.323119
+mean test loss: 0.343531	EPE 3D: 0.785287	ACC 3D: 0.001744	ACC 3D 2: 0.011206
+best test loss till now: 0.343531
+==epoch: 3, learning rate: 0.001000==
+mean train EPE loss: 0.187783
+mean test loss: 0.213828	EPE 3D: 0.625594	ACC 3D: 0.001355	ACC 3D 2: 0.010337
+best test loss till now: 0.213828
+==epoch: 4, learning rate: 0.001000==
+mean train EPE loss: 0.134060
+mean test loss: 0.165874	EPE 3D: 0.537673	ACC 3D: 0.002273	ACC 3D 2: 0.017661
+best test loss till now: 0.165874
+==epoch: 5, learning rate: 0.001000==
+mean train EPE loss: 0.113735
+mean test loss: 0.177256	EPE 3D: 0.554034	ACC 3D: 0.003087	ACC 3D 2: 0.022331
+==epoch: 6, learning rate: 0.001000==
+mean train EPE loss: 0.100242
+mean test loss: 0.160088	EPE 3D: 0.546027	ACC 3D: 0.001098	ACC 3D 2: 0.008426
+best test loss till now: 0.160088
+==epoch: 7, learning rate: 0.001000==
+mean train EPE loss: 0.096957
+mean test loss: 0.447987	EPE 3D: 0.902908	ACC 3D: 0.000340	ACC 3D 2: 0.002856
+==epoch: 8, learning rate: 0.001000==
+mean train EPE loss: 0.091315
+mean test loss: 0.128557	EPE 3D: 0.481799	ACC 3D: 0.001119	ACC 3D 2: 0.009863
+best test loss till now: 0.128557
+==epoch: 9, learning rate: 0.001000==
+mean train EPE loss: 0.085510
+mean test loss: 0.105008	EPE 3D: 0.422944	ACC 3D: 0.002567	ACC 3D 2: 0.022024
+best test loss till now: 0.105008
+==epoch: 10, learning rate: 0.000700==
+mean train EPE loss: 0.074128
+mean test loss: 0.098911	EPE 3D: 0.417071	ACC 3D: 0.002903	ACC 3D 2: 0.021475
+best test loss till now: 0.098911
+==epoch: 11, learning rate: 0.000700==
+mean train EPE loss: 0.069069
+mean test loss: 0.134909	EPE 3D: 0.454275	ACC 3D: 0.006130	ACC 3D 2: 0.044299
+==epoch: 12, learning rate: 0.000700==
+mean train EPE loss: 0.066707
+mean test loss: 0.095394	EPE 3D: 0.393417	ACC 3D: 0.005685	ACC 3D 2: 0.040556
+best test loss till now: 0.095394
+==epoch: 13, learning rate: 0.000700==
+mean train EPE loss: 0.063824
+mean test loss: 0.104565	EPE 3D: 0.435448	ACC 3D: 0.003073	ACC 3D 2: 0.023396
+==epoch: 14, learning rate: 0.000700==
+mean train EPE loss: 0.064730
+mean test loss: 0.083124	EPE 3D: 0.376246	ACC 3D: 0.005148	ACC 3D 2: 0.038230
+best test loss till now: 0.083124
+==epoch: 15, learning rate: 0.000700==
+mean train EPE loss: 0.062195
+mean test loss: 0.124482	EPE 3D: 0.474809	ACC 3D: 0.001749	ACC 3D 2: 0.013436
+==epoch: 16, learning rate: 0.000700==
+mean train EPE loss: 0.057599
+mean test loss: 0.117031	EPE 3D: 0.464617	ACC 3D: 0.000903	ACC 3D 2: 0.008861
+==epoch: 17, learning rate: 0.000700==
+mean train EPE loss: 0.059253
+mean test loss: 1.966616	EPE 3D: 1.926053	ACC 3D: 0.000137	ACC 3D 2: 0.001135
+==epoch: 18, learning rate: 0.000700==
+mean train EPE loss: 0.061920
+mean test loss: 0.296057	EPE 3D: 0.761209	ACC 3D: 0.000375	ACC 3D 2: 0.003390
+==epoch: 19, learning rate: 0.000700==
+mean train EPE loss: 0.056352
+mean test loss: 0.079006	EPE 3D: 0.352564	ACC 3D: 0.009529	ACC 3D 2: 0.067526
+best test loss till now: 0.079006
+==epoch: 20, learning rate: 0.000490==
+mean train EPE loss: 0.048043
+mean test loss: 0.067351	EPE 3D: 0.340293	ACC 3D: 0.004946	ACC 3D 2: 0.038280
+best test loss till now: 0.067351
+==epoch: 21, learning rate: 0.000490==
+mean train EPE loss: 0.045751
+mean test loss: 0.091039	EPE 3D: 0.397933	ACC 3D: 0.004296	ACC 3D 2: 0.031769
+==epoch: 22, learning rate: 0.000490==
+mean train EPE loss: 0.049734
+mean test loss: 0.065644	EPE 3D: 0.317977	ACC 3D: 0.018913	ACC 3D 2: 0.118000
+best test loss till now: 0.065644
+==epoch: 23, learning rate: 0.000490==
+mean train EPE loss: 0.044518
+mean test loss: 0.068070	EPE 3D: 0.339042	ACC 3D: 0.004012	ACC 3D 2: 0.031614
+==epoch: 24, learning rate: 0.000490==
+mean train EPE loss: 0.045578
+mean test loss: 0.063358	EPE 3D: 0.317867	ACC 3D: 0.007273	ACC 3D 2: 0.063124
+best test loss till now: 0.063358
+==epoch: 25, learning rate: 0.000490==
+mean train EPE loss: 0.044205
+mean test loss: 0.083310	EPE 3D: 0.378308	ACC 3D: 0.002008	ACC 3D 2: 0.018514
+==epoch: 26, learning rate: 0.000490==
+mean train EPE loss: 0.043509
+mean test loss: 0.053560	EPE 3D: 0.286059	ACC 3D: 0.016509	ACC 3D 2: 0.118710
+best test loss till now: 0.053560
+==epoch: 27, learning rate: 0.000490==
+mean train EPE loss: 0.043973
+mean test loss: 0.058261	EPE 3D: 0.299484	ACC 3D: 0.007163	ACC 3D 2: 0.065512
+==epoch: 28, learning rate: 0.000490==
+mean train EPE loss: 0.040667
+mean test loss: 0.044451	EPE 3D: 0.246985	ACC 3D: 0.041181	ACC 3D 2: 0.219653
+best test loss till now: 0.044451
+==epoch: 29, learning rate: 0.000490==
+mean train EPE loss: 0.039656
+mean test loss: 0.049424	EPE 3D: 0.262796	ACC 3D: 0.039067	ACC 3D 2: 0.200258
+==epoch: 30, learning rate: 0.000343==
+mean train EPE loss: 0.036710
+mean test loss: 0.046440	EPE 3D: 0.263409	ACC 3D: 0.018420	ACC 3D 2: 0.137144
+==epoch: 31, learning rate: 0.000343==
+mean train EPE loss: 0.035854
+mean test loss: 0.048919	EPE 3D: 0.277496	ACC 3D: 0.017591	ACC 3D 2: 0.118585
+==epoch: 32, learning rate: 0.000343==
+mean train EPE loss: 0.035952
+mean test loss: 0.075759	EPE 3D: 0.357980	ACC 3D: 0.007700	ACC 3D 2: 0.053584
+==epoch: 33, learning rate: 0.000343==
+mean train EPE loss: 0.036875
+mean test loss: 0.048913	EPE 3D: 0.276366	ACC 3D: 0.012536	ACC 3D 2: 0.095883
+==epoch: 34, learning rate: 0.000343==
+mean train EPE loss: 0.034803
+mean test loss: 0.066238	EPE 3D: 0.339678	ACC 3D: 0.005858	ACC 3D 2: 0.044875
+==epoch: 35, learning rate: 0.000343==
+mean train EPE loss: 0.034917
+mean test loss: 0.047045	EPE 3D: 0.267498	ACC 3D: 0.013604	ACC 3D 2: 0.110978
+==epoch: 36, learning rate: 0.000343==
+mean train EPE loss: 0.035026
+mean test loss: 0.058461	EPE 3D: 0.322223	ACC 3D: 0.005192	ACC 3D 2: 0.042965
+==epoch: 37, learning rate: 0.000343==
+mean train EPE loss: 0.034240
+mean test loss: 0.051729	EPE 3D: 0.295470	ACC 3D: 0.009648	ACC 3D 2: 0.068114
+==epoch: 38, learning rate: 0.000343==
+mean train EPE loss: 0.034593
+mean test loss: 0.048378	EPE 3D: 0.277124	ACC 3D: 0.012343	ACC 3D 2: 0.092310
+==epoch: 39, learning rate: 0.000343==
+mean train EPE loss: 0.033342
+mean test loss: 0.045738	EPE 3D: 0.249655	ACC 3D: 0.039027	ACC 3D 2: 0.215667
+==epoch: 40, learning rate: 0.000240==
+mean train EPE loss: 0.030890
+mean test loss: 0.040717	EPE 3D: 0.243784	ACC 3D: 0.020080	ACC 3D 2: 0.147403
+best test loss till now: 0.040717
+==epoch: 41, learning rate: 0.000240==
+mean train EPE loss: 0.029976
+mean test loss: 0.040300	EPE 3D: 0.244626	ACC 3D: 0.021979	ACC 3D 2: 0.153022
+best test loss till now: 0.040300
+==epoch: 42, learning rate: 0.000240==
+mean train EPE loss: 0.030038
+mean test loss: 0.041975	EPE 3D: 0.252009	ACC 3D: 0.021639	ACC 3D 2: 0.153125
+==epoch: 43, learning rate: 0.000240==
+mean train EPE loss: 0.030899
+mean test loss: 0.084953	EPE 3D: 0.405452	ACC 3D: 0.002803	ACC 3D 2: 0.018794
+==epoch: 44, learning rate: 0.000240==
+mean train EPE loss: 0.029626
+mean test loss: 0.038616	EPE 3D: 0.239714	ACC 3D: 0.016136	ACC 3D 2: 0.134337
+best test loss till now: 0.038616
+==epoch: 45, learning rate: 0.000240==
+mean train EPE loss: 0.029646
+mean test loss: 0.047604	EPE 3D: 0.268345	ACC 3D: 0.011260	ACC 3D 2: 0.094159
+==epoch: 46, learning rate: 0.000240==
+mean train EPE loss: 0.028977
+mean test loss: 0.043737	EPE 3D: 0.255663	ACC 3D: 0.021205	ACC 3D 2: 0.144386
+==epoch: 47, learning rate: 0.000240==
+mean train EPE loss: 0.030108
+mean test loss: 0.035312	EPE 3D: 0.215369	ACC 3D: 0.063215	ACC 3D 2: 0.301419
+best test loss till now: 0.035312
+==epoch: 48, learning rate: 0.000240==
+mean train EPE loss: 0.029630
+mean test loss: 0.036435	EPE 3D: 0.219425	ACC 3D: 0.054534	ACC 3D 2: 0.278601
+==epoch: 49, learning rate: 0.000240==
+mean train EPE loss: 0.029709
+mean test loss: 0.041955	EPE 3D: 0.249014	ACC 3D: 0.030486	ACC 3D 2: 0.173633
+==epoch: 50, learning rate: 0.000168==
+mean train EPE loss: 0.027521
+mean test loss: 0.034774	EPE 3D: 0.210607	ACC 3D: 0.069349	ACC 3D 2: 0.320263
+best test loss till now: 0.034774
+==epoch: 51, learning rate: 0.000168==
+mean train EPE loss: 0.026634
+mean test loss: 0.038789	EPE 3D: 0.237000	ACC 3D: 0.027659	ACC 3D 2: 0.186564
+==epoch: 52, learning rate: 0.000168==
+mean train EPE loss: 0.026247
+mean test loss: 0.038831	EPE 3D: 0.240253	ACC 3D: 0.019140	ACC 3D 2: 0.147650
+==epoch: 53, learning rate: 0.000168==
+mean train EPE loss: 0.026038
+mean test loss: 0.034455	EPE 3D: 0.214147	ACC 3D: 0.042952	ACC 3D 2: 0.253875
+best test loss till now: 0.034455
+==epoch: 54, learning rate: 0.000168==
+mean train EPE loss: 0.026523
+mean test loss: 0.033805	EPE 3D: 0.207956	ACC 3D: 0.063380	ACC 3D 2: 0.313331
+best test loss till now: 0.033805
+==epoch: 55, learning rate: 0.000168==
+mean train EPE loss: 0.026201
+mean test loss: 0.034739	EPE 3D: 0.215536	ACC 3D: 0.051570	ACC 3D 2: 0.270858
+==epoch: 56, learning rate: 0.000168==
+mean train EPE loss: 0.026208
+mean test loss: 0.033601	EPE 3D: 0.209465	ACC 3D: 0.053534	ACC 3D 2: 0.294650
+best test loss till now: 0.033601
+==epoch: 57, learning rate: 0.000168==
+mean train EPE loss: 0.025709
+mean test loss: 0.034898	EPE 3D: 0.216184	ACC 3D: 0.041025	ACC 3D 2: 0.246758
+==epoch: 58, learning rate: 0.000168==
+mean train EPE loss: 0.025546
+mean test loss: 0.031957	EPE 3D: 0.199597	ACC 3D: 0.076062	ACC 3D 2: 0.345661
+best test loss till now: 0.031957
+==epoch: 59, learning rate: 0.000168==
+mean train EPE loss: 0.025566
+mean test loss: 0.036887	EPE 3D: 0.230671	ACC 3D: 0.027761	ACC 3D 2: 0.185024
+==epoch: 60, learning rate: 0.000118==
+mean train EPE loss: 0.024197
+mean test loss: 0.030425	EPE 3D: 0.193885	ACC 3D: 0.078977	ACC 3D 2: 0.358866
+best test loss till now: 0.030425
+==epoch: 61, learning rate: 0.000118==
+mean train EPE loss: 0.024279
+mean test loss: 0.034784	EPE 3D: 0.224722	ACC 3D: 0.031983	ACC 3D 2: 0.191675
+==epoch: 62, learning rate: 0.000118==
+mean train EPE loss: 0.024020
+mean test loss: 0.033390	EPE 3D: 0.218906	ACC 3D: 0.036345	ACC 3D 2: 0.216328
+==epoch: 63, learning rate: 0.000118==
+mean train EPE loss: 0.024391
+mean test loss: 0.035246	EPE 3D: 0.224778	ACC 3D: 0.027892	ACC 3D 2: 0.197558
+==epoch: 64, learning rate: 0.000118==
+mean train EPE loss: 0.023614
+mean test loss: 0.033080	EPE 3D: 0.213978	ACC 3D: 0.038264	ACC 3D 2: 0.237129
+==epoch: 65, learning rate: 0.000118==
+mean train EPE loss: 0.023836
+mean test loss: 0.036149	EPE 3D: 0.227081	ACC 3D: 0.020059	ACC 3D 2: 0.158682
+==epoch: 66, learning rate: 0.000118==
+mean train EPE loss: 0.023584
+mean test loss: 0.030837	EPE 3D: 0.200560	ACC 3D: 0.075218	ACC 3D 2: 0.347128
+==epoch: 67, learning rate: 0.000118==
+mean train EPE loss: 0.023140
+mean test loss: 0.030396	EPE 3D: 0.200412	ACC 3D: 0.048464	ACC 3D 2: 0.296142
+best test loss till now: 0.030396
+==epoch: 68, learning rate: 0.000118==
+mean train EPE loss: 0.023482
+mean test loss: 0.030346	EPE 3D: 0.193986	ACC 3D: 0.097883	ACC 3D 2: 0.384353
+best test loss till now: 0.030346
+==epoch: 69, learning rate: 0.000118==
+mean train EPE loss: 0.023302
+mean test loss: 0.029938	EPE 3D: 0.188773	ACC 3D: 0.109809	ACC 3D 2: 0.410476
+best test loss till now: 0.029938
+==epoch: 70, learning rate: 0.000082==
+mean train EPE loss: 0.022145
+mean test loss: 0.028320	EPE 3D: 0.182915	ACC 3D: 0.115219	ACC 3D 2: 0.429866
+best test loss till now: 0.028320
+==epoch: 71, learning rate: 0.000082==
+mean train EPE loss: 0.022131
+mean test loss: 0.029001	EPE 3D: 0.188062	ACC 3D: 0.100140	ACC 3D 2: 0.393792
+==epoch: 72, learning rate: 0.000082==
+mean train EPE loss: 0.022030
+mean test loss: 0.030938	EPE 3D: 0.204663	ACC 3D: 0.049527	ACC 3D 2: 0.272769
+==epoch: 73, learning rate: 0.000082==
+mean train EPE loss: 0.021971
+mean test loss: 0.029933	EPE 3D: 0.200482	ACC 3D: 0.049784	ACC 3D 2: 0.287792
+==epoch: 74, learning rate: 0.000082==
+mean train EPE loss: 0.021723
+mean test loss: 0.032083	EPE 3D: 0.210061	ACC 3D: 0.044138	ACC 3D 2: 0.257081
+==epoch: 75, learning rate: 0.000082==
+mean train EPE loss: 0.021959
+mean test loss: 0.027618	EPE 3D: 0.182262	ACC 3D: 0.105235	ACC 3D 2: 0.426577
+best test loss till now: 0.027618
+==epoch: 76, learning rate: 0.000082==
+mean train EPE loss: 0.021607
+mean test loss: 0.029617	EPE 3D: 0.191589	ACC 3D: 0.092332	ACC 3D 2: 0.388913
+==epoch: 77, learning rate: 0.000082==
+mean train EPE loss: 0.021468
+mean test loss: 0.029799	EPE 3D: 0.193038	ACC 3D: 0.080252	ACC 3D 2: 0.366354
+==epoch: 78, learning rate: 0.000082==
+mean train EPE loss: 0.021322
+mean test loss: 0.031694	EPE 3D: 0.209872	ACC 3D: 0.038328	ACC 3D 2: 0.234429
+==epoch: 79, learning rate: 0.000082==
+mean train EPE loss: 0.021316
+mean test loss: 0.028205	EPE 3D: 0.185433	ACC 3D: 0.089429	ACC 3D 2: 0.406626
+==epoch: 80, learning rate: 0.000058==
+mean train EPE loss: 0.020908
+mean test loss: 0.030110	EPE 3D: 0.203248	ACC 3D: 0.045390	ACC 3D 2: 0.266207
+==epoch: 81, learning rate: 0.000058==
+mean train EPE loss: 0.020598
+mean test loss: 0.028086	EPE 3D: 0.184927	ACC 3D: 0.085120	ACC 3D 2: 0.406182
+==epoch: 82, learning rate: 0.000058==
+mean train EPE loss: 0.020706
+mean test loss: 0.030424	EPE 3D: 0.203599	ACC 3D: 0.038567	ACC 3D 2: 0.269988
+==epoch: 83, learning rate: 0.000058==
+mean train EPE loss: 0.020547
+mean test loss: 0.029033	EPE 3D: 0.187930	ACC 3D: 0.083977	ACC 3D 2: 0.401576
+==epoch: 84, learning rate: 0.000058==
+mean train EPE loss: 0.020367
+mean test loss: 0.027263	EPE 3D: 0.178373	ACC 3D: 0.136084	ACC 3D 2: 0.462088
+best test loss till now: 0.027263
+==epoch: 85, learning rate: 0.000058==
+mean train EPE loss: 0.020365
+mean test loss: 0.026775	EPE 3D: 0.176719	ACC 3D: 0.127161	ACC 3D 2: 0.457860
+best test loss till now: 0.026775
+==epoch: 86, learning rate: 0.000058==
+mean train EPE loss: 0.020447
+mean test loss: 0.027575	EPE 3D: 0.182738	ACC 3D: 0.100187	ACC 3D 2: 0.423587
+==epoch: 87, learning rate: 0.000058==
+mean train EPE loss: 0.020177
+mean test loss: 0.029942	EPE 3D: 0.194286	ACC 3D: 0.077282	ACC 3D 2: 0.359187
+==epoch: 88, learning rate: 0.000058==
+mean train EPE loss: 0.020220
+mean test loss: 0.027958	EPE 3D: 0.185993	ACC 3D: 0.085292	ACC 3D 2: 0.391305
+==epoch: 89, learning rate: 0.000058==
+mean train EPE loss: 0.020141
+mean test loss: 0.032130	EPE 3D: 0.209225	ACC 3D: 0.046162	ACC 3D 2: 0.255902
+==epoch: 90, learning rate: 0.000040==
+mean train EPE loss: 0.019602
+mean test loss: 0.027373	EPE 3D: 0.182688	ACC 3D: 0.093973	ACC 3D 2: 0.410120
+==epoch: 91, learning rate: 0.000040==
+mean train EPE loss: 0.019393
+mean test loss: 0.029618	EPE 3D: 0.197299	ACC 3D: 0.049869	ACC 3D 2: 0.306962
+==epoch: 92, learning rate: 0.000040==
+mean train EPE loss: 0.019505
+mean test loss: 0.027951	EPE 3D: 0.185205	ACC 3D: 0.087058	ACC 3D 2: 0.391404
+==epoch: 93, learning rate: 0.000040==
+mean train EPE loss: 0.019296
+mean test loss: 0.030962	EPE 3D: 0.211400	ACC 3D: 0.029480	ACC 3D 2: 0.209558
+==epoch: 94, learning rate: 0.000040==
+mean train EPE loss: 0.019157
+mean test loss: 0.026992	EPE 3D: 0.180078	ACC 3D: 0.099906	ACC 3D 2: 0.428544
+==epoch: 95, learning rate: 0.000040==
+mean train EPE loss: 0.019183
+mean test loss: 0.026883	EPE 3D: 0.177182	ACC 3D: 0.130146	ACC 3D 2: 0.456298
+==epoch: 96, learning rate: 0.000040==
+mean train EPE loss: 0.019192
+mean test loss: 0.027526	EPE 3D: 0.184749	ACC 3D: 0.077664	ACC 3D 2: 0.388996
+==epoch: 97, learning rate: 0.000040==
+mean train EPE loss: 0.019332
+mean test loss: 0.026251	EPE 3D: 0.175443	ACC 3D: 0.115350	ACC 3D 2: 0.452603
+best test loss till now: 0.026251
+==epoch: 98, learning rate: 0.000040==
+mean train EPE loss: 0.019242
+mean test loss: 0.027485	EPE 3D: 0.183905	ACC 3D: 0.085171	ACC 3D 2: 0.392537
+==epoch: 99, learning rate: 0.000040==
+mean train EPE loss: 0.019246
+mean test loss: 0.026363	EPE 3D: 0.171939	ACC 3D: 0.156624	ACC 3D 2: 0.492514
+==epoch: 100, learning rate: 0.000028==
+mean train EPE loss: 0.018861
+mean test loss: 0.027066	EPE 3D: 0.183012	ACC 3D: 0.082949	ACC 3D 2: 0.396884
+==epoch: 101, learning rate: 0.000028==
+mean train EPE loss: 0.018917
+mean test loss: 0.027077	EPE 3D: 0.175288	ACC 3D: 0.124172	ACC 3D 2: 0.460239
+==epoch: 102, learning rate: 0.000028==
+mean train EPE loss: 0.018610
+mean test loss: 0.025609	EPE 3D: 0.169519	ACC 3D: 0.155564	ACC 3D 2: 0.502339
+best test loss till now: 0.025609
+==epoch: 103, learning rate: 0.000028==
+mean train EPE loss: 0.018632
+mean test loss: 0.026013	EPE 3D: 0.172252	ACC 3D: 0.138014	ACC 3D 2: 0.481550
+==epoch: 104, learning rate: 0.000028==
+mean train EPE loss: 0.018576
+mean test loss: 0.026448	EPE 3D: 0.172114	ACC 3D: 0.141700	ACC 3D 2: 0.484429
+==epoch: 105, learning rate: 0.000028==
+mean train EPE loss: 0.018496
+mean test loss: 0.027195	EPE 3D: 0.181702	ACC 3D: 0.086620	ACC 3D 2: 0.412295
+==epoch: 106, learning rate: 0.000028==
+mean train EPE loss: 0.018606
+mean test loss: 0.025847	EPE 3D: 0.171855	ACC 3D: 0.139352	ACC 3D 2: 0.481849
+==epoch: 107, learning rate: 0.000028==
+mean train EPE loss: 0.018444
+mean test loss: 0.026293	EPE 3D: 0.174291	ACC 3D: 0.125151	ACC 3D 2: 0.463726
+==epoch: 108, learning rate: 0.000028==
+mean train EPE loss: 0.018484
+mean test loss: 0.026607	EPE 3D: 0.174443	ACC 3D: 0.147220	ACC 3D 2: 0.477543
+==epoch: 109, learning rate: 0.000028==
+mean train EPE loss: 0.018460
+mean test loss: 0.025581	EPE 3D: 0.169758	ACC 3D: 0.150196	ACC 3D 2: 0.495643
+best test loss till now: 0.025581
+==epoch: 110, learning rate: 0.000020==
+mean train EPE loss: 0.018178
+mean test loss: 0.025918	EPE 3D: 0.173682	ACC 3D: 0.119578	ACC 3D 2: 0.461165
+==epoch: 111, learning rate: 0.000020==
+mean train EPE loss: 0.018108
+mean test loss: 0.025875	EPE 3D: 0.170611	ACC 3D: 0.142140	ACC 3D 2: 0.490075
+==epoch: 112, learning rate: 0.000020==
+mean train EPE loss: 0.017858
+mean test loss: 0.025874	EPE 3D: 0.170802	ACC 3D: 0.138671	ACC 3D 2: 0.487107
+==epoch: 113, learning rate: 0.000020==
+mean train EPE loss: 0.018054
+mean test loss: 0.025679	EPE 3D: 0.169360	ACC 3D: 0.162137	ACC 3D 2: 0.502318
+==epoch: 114, learning rate: 0.000020==
+mean train EPE loss: 0.018037
+mean test loss: 0.026968	EPE 3D: 0.179771	ACC 3D: 0.084784	ACC 3D 2: 0.420833
+==epoch: 115, learning rate: 0.000020==
+mean train EPE loss: 0.018163
+mean test loss: 0.027252	EPE 3D: 0.178644	ACC 3D: 0.110288	ACC 3D 2: 0.445498
+==epoch: 116, learning rate: 0.000020==
+mean train EPE loss: 0.018046
+mean test loss: 0.025906	EPE 3D: 0.169846	ACC 3D: 0.148368	ACC 3D 2: 0.496580
+==epoch: 117, learning rate: 0.000020==
+mean train EPE loss: 0.018044
+mean test loss: 0.025705	EPE 3D: 0.169174	ACC 3D: 0.151852	ACC 3D 2: 0.497435
+==epoch: 118, learning rate: 0.000020==
+mean train EPE loss: 0.018052
+mean test loss: 0.025983	EPE 3D: 0.172713	ACC 3D: 0.123409	ACC 3D 2: 0.472571
+==epoch: 119, learning rate: 0.000020==
+mean train EPE loss: 0.017854
+mean test loss: 0.026228	EPE 3D: 0.174266	ACC 3D: 0.113129	ACC 3D 2: 0.461198
+==epoch: 120, learning rate: 0.000014==
+mean train EPE loss: 0.017621
+mean test loss: 0.025614	EPE 3D: 0.169100	ACC 3D: 0.155171	ACC 3D 2: 0.496056
+==epoch: 121, learning rate: 0.000014==
+mean train EPE loss: 0.017662
+mean test loss: 0.026142	EPE 3D: 0.175616	ACC 3D: 0.114261	ACC 3D 2: 0.448072
+==epoch: 122, learning rate: 0.000014==
+mean train EPE loss: 0.017591
+mean test loss: 0.025636	EPE 3D: 0.170400	ACC 3D: 0.139958	ACC 3D 2: 0.484190
+==epoch: 123, learning rate: 0.000014==
+mean train EPE loss: 0.017725
+mean test loss: 0.025425	EPE 3D: 0.167466	ACC 3D: 0.160384	ACC 3D 2: 0.511079
+best test loss till now: 0.025425
+==epoch: 124, learning rate: 0.000014==
+mean train EPE loss: 0.017648
+mean test loss: 0.025273	EPE 3D: 0.166668	ACC 3D: 0.169333	ACC 3D 2: 0.514225
+best test loss till now: 0.025273
+==epoch: 125, learning rate: 0.000014==
+mean train EPE loss: 0.017551
+mean test loss: 0.025147	EPE 3D: 0.166854	ACC 3D: 0.162844	ACC 3D 2: 0.511582
+best test loss till now: 0.025147
+==epoch: 126, learning rate: 0.000014==
+mean train EPE loss: 0.017657
+mean test loss: 0.025817	EPE 3D: 0.171385	ACC 3D: 0.127219	ACC 3D 2: 0.479304
+==epoch: 127, learning rate: 0.000014==
+mean train EPE loss: 0.017476
+mean test loss: 0.025790	EPE 3D: 0.171522	ACC 3D: 0.135126	ACC 3D 2: 0.477569
+==epoch: 128, learning rate: 0.000014==
+mean train EPE loss: 0.017557
+mean test loss: 0.026590	EPE 3D: 0.175130	ACC 3D: 0.124377	ACC 3D 2: 0.458717
+==epoch: 129, learning rate: 0.000014==
+mean train EPE loss: 0.017541
+mean test loss: 0.025419	EPE 3D: 0.168863	ACC 3D: 0.149744	ACC 3D 2: 0.497431
+==epoch: 130, learning rate: 0.000010==
+mean train EPE loss: 0.017455
+mean test loss: 0.025474	EPE 3D: 0.169652	ACC 3D: 0.141769	ACC 3D 2: 0.496072
+==epoch: 131, learning rate: 0.000010==
+mean train EPE loss: 0.017318
+mean test loss: 0.025420	EPE 3D: 0.169158	ACC 3D: 0.142200	ACC 3D 2: 0.494677
+==epoch: 132, learning rate: 0.000010==
+mean train EPE loss: 0.017289
+mean test loss: 0.025049	EPE 3D: 0.167138	ACC 3D: 0.151532	ACC 3D 2: 0.510225
+best test loss till now: 0.025049
+==epoch: 133, learning rate: 0.000010==
+mean train EPE loss: 0.017343
+mean test loss: 0.024586	EPE 3D: 0.164924	ACC 3D: 0.167074	ACC 3D 2: 0.520757
+best test loss till now: 0.024586
+==epoch: 134, learning rate: 0.000010==
+mean train EPE loss: 0.017289
+mean test loss: 0.025356	EPE 3D: 0.168023	ACC 3D: 0.154307	ACC 3D 2: 0.506326
+==epoch: 135, learning rate: 0.000010==
+mean train EPE loss: 0.017321
+mean test loss: 0.025500	EPE 3D: 0.168246	ACC 3D: 0.152905	ACC 3D 2: 0.503139
+==epoch: 136, learning rate: 0.000010==
+mean train EPE loss: 0.017239
+mean test loss: 0.025345	EPE 3D: 0.170084	ACC 3D: 0.139472	ACC 3D 2: 0.488243
+==epoch: 137, learning rate: 0.000010==
+mean train EPE loss: 0.017359
+mean test loss: 0.024944	EPE 3D: 0.166093	ACC 3D: 0.165576	ACC 3D 2: 0.516510
+==epoch: 138, learning rate: 0.000010==
+mean train EPE loss: 0.017227
+mean test loss: 0.025317	EPE 3D: 0.166417	ACC 3D: 0.172620	ACC 3D 2: 0.516622
+==epoch: 139, learning rate: 0.000010==
+mean train EPE loss: 0.017285
+mean test loss: 0.024992	EPE 3D: 0.166504	ACC 3D: 0.164596	ACC 3D 2: 0.512679
+==epoch: 140, learning rate: 0.000007==
+mean train EPE loss: 0.017232
+mean test loss: 0.024888	EPE 3D: 0.164992	ACC 3D: 0.176649	ACC 3D 2: 0.523084
+==epoch: 141, learning rate: 0.000007==
+mean train EPE loss: 0.017208
+mean test loss: 0.025070	EPE 3D: 0.164516	ACC 3D: 0.182153	ACC 3D 2: 0.529026
+==epoch: 142, learning rate: 0.000007==
+mean train EPE loss: 0.017219
+mean test loss: 0.024902	EPE 3D: 0.164261	ACC 3D: 0.178425	ACC 3D 2: 0.528339
+==epoch: 143, learning rate: 0.000007==
+mean train EPE loss: 0.017121
+mean test loss: 0.024756	EPE 3D: 0.164518	ACC 3D: 0.176582	ACC 3D 2: 0.525692
+==epoch: 144, learning rate: 0.000007==
+mean train EPE loss: 0.017129
+mean test loss: 0.025363	EPE 3D: 0.165336	ACC 3D: 0.177390	ACC 3D 2: 0.526008
+==epoch: 145, learning rate: 0.000007==
+mean train EPE loss: 0.017040
+mean test loss: 0.024973	EPE 3D: 0.166075	ACC 3D: 0.167664	ACC 3D 2: 0.516609
+==epoch: 146, learning rate: 0.000007==
+mean train EPE loss: 0.017166
+mean test loss: 0.025216	EPE 3D: 0.165485	ACC 3D: 0.173222	ACC 3D 2: 0.522545
+==epoch: 147, learning rate: 0.000007==
+mean train EPE loss: 0.017105
+mean test loss: 0.024998	EPE 3D: 0.165415	ACC 3D: 0.170841	ACC 3D 2: 0.520788
+==epoch: 148, learning rate: 0.000007==
+mean train EPE loss: 0.017073
+mean test loss: 0.024944	EPE 3D: 0.164650	ACC 3D: 0.177613	ACC 3D 2: 0.527055
+==epoch: 149, learning rate: 0.000007==
+mean train EPE loss: 0.017105
+mean test loss: 0.024851	EPE 3D: 0.165114	ACC 3D: 0.172374	ACC 3D 2: 0.523314
+==epoch: 150, learning rate: 0.000005==
+mean train EPE loss: 0.016995
+mean test loss: 0.025042	EPE 3D: 0.167271	ACC 3D: 0.146323	ACC 3D 2: 0.507744
+==epoch: 151, learning rate: 0.000005==
+mean train EPE loss: 0.016969
+mean test loss: 0.024989	EPE 3D: 0.164816	ACC 3D: 0.177848	ACC 3D 2: 0.526831
+==epoch: 152, learning rate: 0.000005==
+mean train EPE loss: 0.016903
+mean test loss: 0.024717	EPE 3D: 0.163430	ACC 3D: 0.182998	ACC 3D 2: 0.532618
+==epoch: 153, learning rate: 0.000005==
+mean train EPE loss: 0.016984
+mean test loss: 0.024782	EPE 3D: 0.164774	ACC 3D: 0.172533	ACC 3D 2: 0.522578
+==epoch: 154, learning rate: 0.000005==
+mean train EPE loss: 0.016889
+mean test loss: 0.025000	EPE 3D: 0.166816	ACC 3D: 0.156737	ACC 3D 2: 0.510805
+==epoch: 155, learning rate: 0.000005==
+mean train EPE loss: 0.016965
+mean test loss: 0.025113	EPE 3D: 0.167404	ACC 3D: 0.154117	ACC 3D 2: 0.506703
+==epoch: 156, learning rate: 0.000005==
+mean train EPE loss: 0.016954
+mean test loss: 0.024819	EPE 3D: 0.164444	ACC 3D: 0.176775	ACC 3D 2: 0.527191
+==epoch: 157, learning rate: 0.000005==
+mean train EPE loss: 0.016975
+mean test loss: 0.024951	EPE 3D: 0.165318	ACC 3D: 0.168689	ACC 3D 2: 0.521723
+==epoch: 158, learning rate: 0.000005==
+mean train EPE loss: 0.016880
+mean test loss: 0.024797	EPE 3D: 0.163891	ACC 3D: 0.179671	ACC 3D 2: 0.531275
+==epoch: 159, learning rate: 0.000005==
+mean train EPE loss: 0.016982
+mean test loss: 0.024839	EPE 3D: 0.165077	ACC 3D: 0.166606	ACC 3D 2: 0.523612
+==epoch: 160, learning rate: 0.000003==
+mean train EPE loss: 0.016866
+mean test loss: 0.024927	EPE 3D: 0.164679	ACC 3D: 0.176198	ACC 3D 2: 0.525945
+==epoch: 161, learning rate: 0.000003==
+mean train EPE loss: 0.016893
+mean test loss: 0.024810	EPE 3D: 0.163796	ACC 3D: 0.181136	ACC 3D 2: 0.530061
+==epoch: 162, learning rate: 0.000003==
+mean train EPE loss: 0.016958
+mean test loss: 0.024791	EPE 3D: 0.164365	ACC 3D: 0.177118	ACC 3D 2: 0.526384
+==epoch: 163, learning rate: 0.000003==
+mean train EPE loss: 0.016938
+mean test loss: 0.024808	EPE 3D: 0.163638	ACC 3D: 0.182343	ACC 3D 2: 0.533856
+==epoch: 164, learning rate: 0.000003==
+mean train EPE loss: 0.016856
+mean test loss: 0.024858	EPE 3D: 0.165220	ACC 3D: 0.168114	ACC 3D 2: 0.520102
+==epoch: 165, learning rate: 0.000003==
+mean train EPE loss: 0.016893
+mean test loss: 0.024891	EPE 3D: 0.164662	ACC 3D: 0.175933	ACC 3D 2: 0.525340
+==epoch: 166, learning rate: 0.000003==
+mean train EPE loss: 0.016854
+mean test loss: 0.024826	EPE 3D: 0.164289	ACC 3D: 0.178336	ACC 3D 2: 0.528900
+==epoch: 167, learning rate: 0.000003==
+mean train EPE loss: 0.016817
+mean test loss: 0.024752	EPE 3D: 0.164440	ACC 3D: 0.170282	ACC 3D 2: 0.523504
+==epoch: 168, learning rate: 0.000003==
+mean train EPE loss: 0.016830
+mean test loss: 0.024960	EPE 3D: 0.165965	ACC 3D: 0.167456	ACC 3D 2: 0.518283
+==epoch: 169, learning rate: 0.000003==
+mean train EPE loss: 0.016827
+mean test loss: 0.024862	EPE 3D: 0.164829	ACC 3D: 0.169945	ACC 3D 2: 0.524802
+==epoch: 170, learning rate: 0.000002==
+mean train EPE loss: 0.016830
+mean test loss: 0.024775	EPE 3D: 0.164934	ACC 3D: 0.168674	ACC 3D 2: 0.522788
+==epoch: 171, learning rate: 0.000002==
+mean train EPE loss: 0.016808
+mean test loss: 0.024725	EPE 3D: 0.163820	ACC 3D: 0.177021	ACC 3D 2: 0.530211
+==epoch: 172, learning rate: 0.000002==
+mean train EPE loss: 0.016746
+mean test loss: 0.024981	EPE 3D: 0.165133	ACC 3D: 0.172524	ACC 3D 2: 0.522031
+==epoch: 173, learning rate: 0.000002==
+mean train EPE loss: 0.016779
+mean test loss: 0.024687	EPE 3D: 0.163652	ACC 3D: 0.182423	ACC 3D 2: 0.532343
+==epoch: 174, learning rate: 0.000002==
+mean train EPE loss: 0.016821
+mean test loss: 0.024807	EPE 3D: 0.163739	ACC 3D: 0.181699	ACC 3D 2: 0.532380
+==epoch: 175, learning rate: 0.000002==
+mean train EPE loss: 0.016833
+mean test loss: 0.024959	EPE 3D: 0.166678	ACC 3D: 0.156397	ACC 3D 2: 0.507562
+==epoch: 176, learning rate: 0.000002==
+mean train EPE loss: 0.016757
+mean test loss: 0.024774	EPE 3D: 0.165002	ACC 3D: 0.170143	ACC 3D 2: 0.521751
+==epoch: 177, learning rate: 0.000002==
+mean train EPE loss: 0.016776
+mean test loss: 0.024723	EPE 3D: 0.165814	ACC 3D: 0.160752	ACC 3D 2: 0.515756
+==epoch: 178, learning rate: 0.000002==
+mean train EPE loss: 0.016743
+mean test loss: 0.024537	EPE 3D: 0.163246	ACC 3D: 0.180608	ACC 3D 2: 0.532428
+best test loss till now: 0.024537
+==epoch: 179, learning rate: 0.000002==
+mean train EPE loss: 0.016783
+mean test loss: 0.024619	EPE 3D: 0.163253	ACC 3D: 0.182802	ACC 3D 2: 0.532470
+==epoch: 180, learning rate: 0.000002==
+mean train EPE loss: 0.016698
+mean test loss: 0.024787	EPE 3D: 0.163779	ACC 3D: 0.180535	ACC 3D 2: 0.531487
+==epoch: 181, learning rate: 0.000002==
+mean train EPE loss: 0.016749
+mean test loss: 0.024675	EPE 3D: 0.163434	ACC 3D: 0.181987	ACC 3D 2: 0.531561
+==epoch: 182, learning rate: 0.000002==
+mean train EPE loss: 0.016736
+mean test loss: 0.024735	EPE 3D: 0.163499	ACC 3D: 0.182696	ACC 3D 2: 0.531610
+==epoch: 183, learning rate: 0.000002==
+mean train EPE loss: 0.016718
+mean test loss: 0.024591	EPE 3D: 0.163140	ACC 3D: 0.181734	ACC 3D 2: 0.533030
+==epoch: 184, learning rate: 0.000002==
+mean train EPE loss: 0.016794
+mean test loss: 0.024816	EPE 3D: 0.163720	ACC 3D: 0.180448	ACC 3D 2: 0.531089
+==epoch: 185, learning rate: 0.000002==
+mean train EPE loss: 0.016698
+mean test loss: 0.024561	EPE 3D: 0.163187	ACC 3D: 0.183881	ACC 3D 2: 0.533080
+==epoch: 186, learning rate: 0.000002==
+mean train EPE loss: 0.016698
+mean test loss: 0.025010	EPE 3D: 0.164109	ACC 3D: 0.182239	ACC 3D 2: 0.531003
+==epoch: 187, learning rate: 0.000002==
+mean train EPE loss: 0.016634
+mean test loss: 0.024791	EPE 3D: 0.163962	ACC 3D: 0.178144	ACC 3D 2: 0.530137
+==epoch: 188, learning rate: 0.000002==
+mean train EPE loss: 0.016695
+mean test loss: 0.024765	EPE 3D: 0.163177	ACC 3D: 0.185847	ACC 3D 2: 0.534208
+==epoch: 189, learning rate: 0.000002==
+mean train EPE loss: 0.016666
+mean test loss: 0.024937	EPE 3D: 0.164715	ACC 3D: 0.174200	ACC 3D 2: 0.526972
+==epoch: 190, learning rate: 0.000001==
+mean train EPE loss: 0.016662
+mean test loss: 0.024781	EPE 3D: 0.163937	ACC 3D: 0.179070	ACC 3D 2: 0.529765
+==epoch: 191, learning rate: 0.000001==
+mean train EPE loss: 0.016638
+mean test loss: 0.024714	EPE 3D: 0.163778	ACC 3D: 0.179196	ACC 3D 2: 0.529773
+==epoch: 192, learning rate: 0.000001==
+mean train EPE loss: 0.016660
+mean test loss: 0.024870	EPE 3D: 0.164354	ACC 3D: 0.177670	ACC 3D 2: 0.527340
+==epoch: 193, learning rate: 0.000001==
+mean train EPE loss: 0.016710
+mean test loss: 0.024526	EPE 3D: 0.162784	ACC 3D: 0.185514	ACC 3D 2: 0.536235
+best test loss till now: 0.024526
+==epoch: 194, learning rate: 0.000001==
+mean train EPE loss: 0.016693
+mean test loss: 0.024841	EPE 3D: 0.164170	ACC 3D: 0.178477	ACC 3D 2: 0.528513
+==epoch: 195, learning rate: 0.000001==
+mean train EPE loss: 0.016632
+mean test loss: 0.024628	EPE 3D: 0.163073	ACC 3D: 0.186264	ACC 3D 2: 0.535574
+==epoch: 196, learning rate: 0.000001==
+mean train EPE loss: 0.016659
+mean test loss: 0.024796	EPE 3D: 0.163153	ACC 3D: 0.184505	ACC 3D 2: 0.535293
+==epoch: 197, learning rate: 0.000001==
+mean train EPE loss: 0.016789
+mean test loss: 0.024653	EPE 3D: 0.163351	ACC 3D: 0.181333	ACC 3D 2: 0.533088
+==epoch: 198, learning rate: 0.000001==
+mean train EPE loss: 0.016704
+mean test loss: 0.024667	EPE 3D: 0.163110	ACC 3D: 0.184843	ACC 3D 2: 0.534692
+==epoch: 199, learning rate: 0.000001==
+mean train EPE loss: 0.016702
+mean test loss: 0.024905	EPE 3D: 0.165197	ACC 3D: 0.170308	ACC 3D 2: 0.522147
+==epoch: 200, learning rate: 0.000001==
+mean train EPE loss: 0.016662
+mean test loss: 0.024699	EPE 3D: 0.163731	ACC 3D: 0.180423	ACC 3D 2: 0.531364
+==epoch: 201, learning rate: 0.000001==
+mean train EPE loss: 0.016620
+mean test loss: 0.024670	EPE 3D: 0.163366	ACC 3D: 0.181646	ACC 3D 2: 0.532699
+==epoch: 202, learning rate: 0.000001==
+mean train EPE loss: 0.016693
+mean test loss: 0.024873	EPE 3D: 0.163997	ACC 3D: 0.179252	ACC 3D 2: 0.530788
+==epoch: 203, learning rate: 0.000001==
+mean train EPE loss: 0.016611
+mean test loss: 0.024529	EPE 3D: 0.162815	ACC 3D: 0.185555	ACC 3D 2: 0.536017
+==epoch: 204, learning rate: 0.000001==
+mean train EPE loss: 0.016637
+mean test loss: 0.024682	EPE 3D: 0.164558	ACC 3D: 0.170830	ACC 3D 2: 0.523210
+==epoch: 205, learning rate: 0.000001==
+mean train EPE loss: 0.016747
+mean test loss: 0.025381	EPE 3D: 0.168243	ACC 3D: 0.157460	ACC 3D 2: 0.504689
+==epoch: 206, learning rate: 0.000001==
+mean train EPE loss: 0.016701
+mean test loss: 0.024636	EPE 3D: 0.163044	ACC 3D: 0.185450	ACC 3D 2: 0.534839
+==epoch: 207, learning rate: 0.000001==
+mean train EPE loss: 0.016672
+mean test loss: 0.024838	EPE 3D: 0.165376	ACC 3D: 0.169613	ACC 3D 2: 0.519837
+==epoch: 208, learning rate: 0.000001==
+mean train EPE loss: 0.016696
+mean test loss: 0.024489	EPE 3D: 0.163477	ACC 3D: 0.177739	ACC 3D 2: 0.530402
+best test loss till now: 0.024489
+==epoch: 209, learning rate: 0.000001==
+mean train EPE loss: 0.016680
+mean test loss: 0.024608	EPE 3D: 0.163467	ACC 3D: 0.181285	ACC 3D 2: 0.531956
+==epoch: 210, learning rate: 0.000001==
+mean train EPE loss: 0.016677
+mean test loss: 0.024410	EPE 3D: 0.162388	ACC 3D: 0.186485	ACC 3D 2: 0.537121
+best test loss till now: 0.024410
+==epoch: 211, learning rate: 0.000001==
+mean train EPE loss: 0.016693
+mean test loss: 0.024649	EPE 3D: 0.163753	ACC 3D: 0.177117	ACC 3D 2: 0.530242
+==epoch: 212, learning rate: 0.000001==
+mean train EPE loss: 0.016665
+mean test loss: 0.024559	EPE 3D: 0.163343	ACC 3D: 0.183071	ACC 3D 2: 0.532917
+==epoch: 213, learning rate: 0.000001==
+mean train EPE loss: 0.016628
+mean test loss: 0.024705	EPE 3D: 0.163698	ACC 3D: 0.182338	ACC 3D 2: 0.530539
+==epoch: 214, learning rate: 0.000001==
+mean train EPE loss: 0.016610
+mean test loss: 0.024507	EPE 3D: 0.162850	ACC 3D: 0.184287	ACC 3D 2: 0.533929
+==epoch: 215, learning rate: 0.000001==
+mean train EPE loss: 0.016688
+mean test loss: 0.024650	EPE 3D: 0.163043	ACC 3D: 0.185099	ACC 3D 2: 0.535472
+==epoch: 216, learning rate: 0.000001==
+mean train EPE loss: 0.016635
+mean test loss: 0.024470	EPE 3D: 0.162664	ACC 3D: 0.185842	ACC 3D 2: 0.536172
+==epoch: 217, learning rate: 0.000001==
+mean train EPE loss: 0.016682
+mean test loss: 0.024613	EPE 3D: 0.163122	ACC 3D: 0.184288	ACC 3D 2: 0.533701
+==epoch: 218, learning rate: 0.000001==
+mean train EPE loss: 0.016640
+mean test loss: 0.024487	EPE 3D: 0.162811	ACC 3D: 0.184816	ACC 3D 2: 0.534667
+==epoch: 219, learning rate: 0.000001==
+mean train EPE loss: 0.016621
+mean test loss: 0.024675	EPE 3D: 0.163769	ACC 3D: 0.178778	ACC 3D 2: 0.529982
+==epoch: 220, learning rate: 0.000000==
+mean train EPE loss: 0.016605
+mean test loss: 0.024683	EPE 3D: 0.163939	ACC 3D: 0.175371	ACC 3D 2: 0.528197
+==epoch: 221, learning rate: 0.000000==
+mean train EPE loss: 0.016559
+mean test loss: 0.024534	EPE 3D: 0.162868	ACC 3D: 0.184972	ACC 3D 2: 0.534734
+==epoch: 222, learning rate: 0.000000==
+mean train EPE loss: 0.016576
+mean test loss: 0.024828	EPE 3D: 0.164608	ACC 3D: 0.172704	ACC 3D 2: 0.524371
+==epoch: 223, learning rate: 0.000000==
+mean train EPE loss: 0.016609
+mean test loss: 0.024639	EPE 3D: 0.163361	ACC 3D: 0.180612	ACC 3D 2: 0.533253
+==epoch: 224, learning rate: 0.000000==
+mean train EPE loss: 0.016621
+mean test loss: 0.024606	EPE 3D: 0.163845	ACC 3D: 0.175367	ACC 3D 2: 0.528888
+==epoch: 225, learning rate: 0.000000==
+mean train EPE loss: 0.016620
+mean test loss: 0.024806	EPE 3D: 0.163409	ACC 3D: 0.184970	ACC 3D 2: 0.533870
+==epoch: 226, learning rate: 0.000000==
+mean train EPE loss: 0.016656
+mean test loss: 0.024835	EPE 3D: 0.163594	ACC 3D: 0.184315	ACC 3D 2: 0.533146
+==epoch: 227, learning rate: 0.000000==
+mean train EPE loss: 0.016616
+mean test loss: 0.024565	EPE 3D: 0.163344	ACC 3D: 0.183194	ACC 3D 2: 0.532302
+==epoch: 228, learning rate: 0.000000==
+mean train EPE loss: 0.016605
+mean test loss: 0.024721	EPE 3D: 0.163147	ACC 3D: 0.185329	ACC 3D 2: 0.536018
+==epoch: 229, learning rate: 0.000000==
+mean train EPE loss: 0.016654
+mean test loss: 0.024539	EPE 3D: 0.162861	ACC 3D: 0.186323	ACC 3D 2: 0.535814
+==epoch: 230, learning rate: 0.000000==
+mean train EPE loss: 0.016642
+mean test loss: 0.024715	EPE 3D: 0.163909	ACC 3D: 0.177627	ACC 3D 2: 0.528547
+==epoch: 231, learning rate: 0.000000==
+mean train EPE loss: 0.016602
+mean test loss: 0.024764	EPE 3D: 0.163729	ACC 3D: 0.181397	ACC 3D 2: 0.532730
+==epoch: 232, learning rate: 0.000000==
+mean train EPE loss: 0.016664
+mean test loss: 0.024482	EPE 3D: 0.163031	ACC 3D: 0.183748	ACC 3D 2: 0.534051
+==epoch: 233, learning rate: 0.000000==
+mean train EPE loss: 0.016613
+mean test loss: 0.024480	EPE 3D: 0.162839	ACC 3D: 0.185123	ACC 3D 2: 0.534777
+==epoch: 234, learning rate: 0.000000==
+mean train EPE loss: 0.016706
+mean test loss: 0.024852	EPE 3D: 0.164520	ACC 3D: 0.173830	ACC 3D 2: 0.526174
+==epoch: 235, learning rate: 0.000000==
+mean train EPE loss: 0.016555
+mean test loss: 0.024674	EPE 3D: 0.163602	ACC 3D: 0.182302	ACC 3D 2: 0.532851
+==epoch: 236, learning rate: 0.000000==
+mean train EPE loss: 0.016640
+mean test loss: 0.024709	EPE 3D: 0.163549	ACC 3D: 0.182019	ACC 3D 2: 0.532647
+==epoch: 237, learning rate: 0.000000==
+mean train EPE loss: 0.016597
+mean test loss: 0.024687	EPE 3D: 0.164041	ACC 3D: 0.179751	ACC 3D 2: 0.529438
+==epoch: 238, learning rate: 0.000000==
+mean train EPE loss: 0.016646
+mean test loss: 0.024796	EPE 3D: 0.165208	ACC 3D: 0.168534	ACC 3D 2: 0.521531
+==epoch: 239, learning rate: 0.000000==
+mean train EPE loss: 0.016616
+mean test loss: 0.024706	EPE 3D: 0.163360	ACC 3D: 0.183683	ACC 3D 2: 0.533521
+==epoch: 240, learning rate: 0.000000==
+mean train EPE loss: 0.016621
+mean test loss: 0.024634	EPE 3D: 0.162633	ACC 3D: 0.188406	ACC 3D 2: 0.537563
+==epoch: 241, learning rate: 0.000000==
+mean train EPE loss: 0.016557
+mean test loss: 0.024532	EPE 3D: 0.163439	ACC 3D: 0.179921	ACC 3D 2: 0.531053
+==epoch: 242, learning rate: 0.000000==
+mean train EPE loss: 0.016587
+mean test loss: 0.024593	EPE 3D: 0.163039	ACC 3D: 0.183713	ACC 3D 2: 0.534362
+==epoch: 243, learning rate: 0.000000==
+mean train EPE loss: 0.016585
+mean test loss: 0.024557	EPE 3D: 0.162997	ACC 3D: 0.184772	ACC 3D 2: 0.534834
+==epoch: 244, learning rate: 0.000000==
+mean train EPE loss: 0.016642
+mean test loss: 0.024703	EPE 3D: 0.163717	ACC 3D: 0.181272	ACC 3D 2: 0.531165
+==epoch: 245, learning rate: 0.000000==
+mean train EPE loss: 0.016562
+mean test loss: 0.024612	EPE 3D: 0.163050	ACC 3D: 0.185552	ACC 3D 2: 0.535277
+==epoch: 246, learning rate: 0.000000==
+mean train EPE loss: 0.016604
+mean test loss: 0.024528	EPE 3D: 0.162975	ACC 3D: 0.185620	ACC 3D 2: 0.535629
+==epoch: 247, learning rate: 0.000000==
+mean train EPE loss: 0.016556
+mean test loss: 0.024574	EPE 3D: 0.162850	ACC 3D: 0.186252	ACC 3D 2: 0.535510
+==epoch: 248, learning rate: 0.000000==
+mean train EPE loss: 0.016616
+mean test loss: 0.024754	EPE 3D: 0.163342	ACC 3D: 0.184171	ACC 3D 2: 0.533760
+==epoch: 249, learning rate: 0.000000==
+mean train EPE loss: 0.016667
+mean test loss: 0.024696	EPE 3D: 0.163967	ACC 3D: 0.176417	ACC 3D 2: 0.529024
+FINISH
